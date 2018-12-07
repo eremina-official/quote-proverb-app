@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba( 0, 0, 0, .9 );
+}
+
+/* box-sizing property is not inherited */
+* {
+  box-sizing: border-box; 
+}
+
+#credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: white;
+  background-color: rgba( 0, 0, 0, .4 );
+  padding: 10px;
+  z-index: 4;
+}
+#credits a {
+  color: white;
+}
+
+
