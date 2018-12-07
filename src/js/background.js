@@ -15,7 +15,10 @@ const backgroundModule = (function() {
     DOM.$next = $('#next');
   }
 
-  /*    DOM.$image and DOM.$next are set to undefined, because at this step these variables are in memory, but the cacheDOM function did not run yet. Why DOM has its properties set and available from here?
+  /*    DOM.$image and DOM.$next are set to undefined, 
+  because at this step these variables are in memory, 
+  but the cacheDOM function did not run yet. 
+  Why DOM has its properties set and available from here?
 
   const testdom = {};
   testdom.key = 'value';
@@ -31,7 +34,11 @@ const backgroundModule = (function() {
   console.log(this); */
 
   function loadImage() {
-    let source = 'https://source.unsplash.com/1920x1080?nature?sig=' + uniqueUrl; /* URL should be unique with each request, otherwise browser does not fetch a new image but uses the cached one instead. To make the URL unique add ?sig=any-number at the end. ?sig= is ignored by back-end */
+    let source = 'https://source.unsplash.com/1920x1080?nature?sig=' + uniqueUrl; 
+    /* URL should be unique with each request, otherwise browser does not fetch 
+    a new image but uses the cached one instead. 
+    To make the URL unique add ?sig=any-number at the end. 
+    ?sig= is ignored by back-end */
     DOM.$image.attr('src', source);
     uniqueUrl++;
     DOM.$image.on('load', function() {

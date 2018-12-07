@@ -4,10 +4,22 @@ const proverbQuoteModule = (function() {
   const DOM = {};
   
   const proverbArray = [
-    'text1',
-    'text2',
-    'text3'
+    'If you can\'t beat \'em, join \'em',
+    'Don\'t count your chickens before they hatch',
+    'Actions speak louder than words',
+    'The leopard does not change his spots',
+    'A journey of a thousand miles begins with a single step',
+    'Don\'t bite the hand that feeds you',
+    'Don\'t put off until tomorrow what you can do today',
+    'No man is an island',
+    'The early bird gets the worm',
+    'The enemy of my enemy is my friend',
+    'A poor workman always blames his tools',
+    'A person is known by the company he keeps',
+    'Don\'t burn your bridges behind you'
   ];
+
+  const lastProverbIndex = proverbArray.length - 1;
 
   //private functions
   function cacheDom() {
@@ -17,14 +29,15 @@ const proverbQuoteModule = (function() {
   function bindEvents() {
     DOM.$next.on('click', showNextProverb);
   }
-
   function showProverb() {
     DOM.$proverb.html(proverbArray[0]);
   }
   function showNextProverb() {
-    const proverbArrayLength = proverbArray.length;
+    let currentProverb = DOM.$proverb.html();
+    let currentIndex = proverbArray.indexOf(currentProverb);
+    let indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
+    DOM.$proverb.html(proverbArray[indexToShow]);
   }
-
 
   //public functions
   function init() {
