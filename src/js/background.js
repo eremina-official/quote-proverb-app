@@ -5,14 +5,14 @@ const backgroundModule = (function() {
   
   'use strict';
   
-  //cache DOM, initialise variables
+  //cache DOM, declare variables
   const DOM = {};
   let uniqueUrl = 1;
 
   //private functions
   function cacheDOM() {
     DOM.$image = $('#image');
-    DOM.$next = $('#next');
+    DOM.$nextProverb = $('#next');
   }
 
   /*    DOM.$image and DOM.$next are set to undefined, 
@@ -38,7 +38,7 @@ const backgroundModule = (function() {
     /* URL should be unique with each request, otherwise browser does not fetch 
     a new image but uses the cached one instead. 
     To make the URL unique add ?sig=any-number at the end. 
-    ?sig= is ignored by back-end */
+    ?sig= is ignored by a server */
     DOM.$image.attr('src', source);
     uniqueUrl++;
     DOM.$image.on('load', function() {
@@ -54,7 +54,7 @@ const backgroundModule = (function() {
     
   //bind events
   function bindEvents() {
-    DOM.$next.on('click', loadNextImage);
+    DOM.$nextProverb.on('click', loadNextImage);
   }
   
     //public functions
@@ -66,7 +66,8 @@ const backgroundModule = (function() {
   }
 
   return {
-    init: init
+    init: init,
+    loadNextImage: loadNextImage
   };
     
 })(); //backgroundModule

@@ -1,6 +1,6 @@
-const proverbQuoteModule = (function() {
+const proverbModule = (function() {
 
-  //cache DOM, initialise variables
+  //cache DOM, declare variables
   const DOM = {};
   
   const proverbArray = [
@@ -23,11 +23,16 @@ const proverbQuoteModule = (function() {
 
   //private functions
   function cacheDom() {
+    DOM.$showQuotes = $('#show-quotes');
+    DOM.$showProverbs = $('#show-proverbs');
     DOM.$proverb = $('#proverb');
-    DOM.$next = $('#next');
+    DOM.$author = $('#author');
+    DOM.$nextQuote = $('#next-quote');
+    DOM.$nextProverb = $('#next');
   }
   function bindEvents() {
-    DOM.$next.on('click', showNextProverb);
+    DOM.$showProverbs.on('click', goToProverb);
+    DOM.$nextProverb.on('click', showNextProverb);
   }
   function showProverb() {
     DOM.$proverb.html(proverbArray[0]);
@@ -37,6 +42,16 @@ const proverbQuoteModule = (function() {
     let currentIndex = proverbArray.indexOf(currentProverb);
     let indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
     DOM.$proverb.html(proverbArray[indexToShow]);
+  }
+  function goToProverb() {
+    DOM.$proverb.addClass('largefont');
+    DOM.$showQuotes.removeClass('active');
+    $(this).addClass('active');
+    DOM.$nextQuote.hide();
+    DOM.$nextProverb.show();
+    DOM.$author.html('');
+    showProverb();
+    backgroundModule.loadNextImage();
   }
 
   //public functions
@@ -50,4 +65,4 @@ const proverbQuoteModule = (function() {
     init: init
   };
 
-})(); //proverbQuoteModule
+})(); //proverbModule

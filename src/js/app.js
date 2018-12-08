@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   backgroundModule.init();
-  proverbQuoteModule.init();
+  proverbModule.init();
+  quoteModule.init();
    
 });
