@@ -42,6 +42,7 @@ const proverbModule = (function() {
     let currentIndex = proverbArray.indexOf(currentProverb);
     let indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
     DOM.$proverb.html(proverbArray[indexToShow]);
+    backgroundModule.loadNextImage();
   }
   function goToProverb() {
     DOM.$proverb.addClass('largefont');

@@ -12,7 +12,6 @@ const backgroundModule = (function() {
   //private functions
   function cacheDOM() {
     DOM.$image = $('#image');
-    DOM.$nextProverb = $('#next');
   }
 
   /*    DOM.$image and DOM.$next are set to undefined, 
@@ -52,11 +51,6 @@ const backgroundModule = (function() {
     loadImage();
   }
     
-  //bind events
-  function bindEvents() {
-    DOM.$nextProverb.on('click', loadNextImage);
-  }
-  
     //public functions
   function init() {
     cacheDOM();
