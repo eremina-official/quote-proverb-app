@@ -31,12 +31,12 @@ const quoteModule = (function() {
     //console.log(uniqueUrl);
   }
   function showNextQuote() {
+    DOM.$proverb.removeClass('largefont');
+    callAjax();
     DOM.$showProverbs.removeClass('active');
     $(this).addClass('active');
-    DOM.$proverb.removeClass('largefont');
     DOM.$nextProverb.hide();
     DOM.$nextQuote.show();
-    callAjax();
     backgroundModule.loadNextImage();
   }
 
