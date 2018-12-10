@@ -55,8 +55,6 @@ const backgroundModule = (function() {
   function init() {
     cacheDOM();
     loadImage();
-    bindEvents();
-    //changetestdom();
   }
 
   return {
