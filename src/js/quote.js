@@ -31,6 +31,7 @@ const quoteModule = (function() {
     //console.log(uniqueUrl);
   }
   function showQuotes() {
+    DOM.$proverb.html('');
     showNextQuote();
     DOM.$proverb.removeClass('largefont');
     DOM.$showProverbs.removeClass('active');

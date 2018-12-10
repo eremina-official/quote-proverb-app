@@ -16,7 +16,7 @@ body {
   color: white;
   background-color: rgba( 0, 0, 0, .4 );
   padding: 10px;
-  z-index: 4;
+  z-index: 98;
 }
 #credits p {
   margin: 0;
