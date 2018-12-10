@@ -14,7 +14,7 @@ const quoteModule = (function() {
     DOM.$author = $('#author');
   }
   function bindEvents() {
-    DOM.$showQuotes.on('click', showNextQuote);
+    DOM.$showQuotes.on('click', showQuotes);
     DOM.$nextQuote.on('click', showNextQuote);
   }
   function callAjax() {
@@ -30,13 +30,16 @@ const quoteModule = (function() {
     uniqueUrlCounter++;
     //console.log(uniqueUrl);
   }
-  function showNextQuote() {
+  function showQuotes() {
+    showNextQuote();
     DOM.$proverb.removeClass('largefont');
-    callAjax();
     DOM.$showProverbs.removeClass('active');
     $(this).addClass('active');
     DOM.$nextProverb.hide();
     DOM.$nextQuote.show();
+  }
+  function showNextQuote() {
+    callAjax();
     backgroundModule.loadNextImage();
   }
 
