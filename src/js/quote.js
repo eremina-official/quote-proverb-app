@@ -4,7 +4,6 @@ const quoteModule = (function() {
   const DOM = {};
   let uniqueUrlCounter = 1;
 
-
   //private functions
   function cacheDom() {
     DOM.$showQuotes = $('#show-quotes');
@@ -19,7 +18,7 @@ const quoteModule = (function() {
     DOM.$nextQuote.on('click', showNextQuote);
   }
   function callAjax() {
-    let uniqueUrl = 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?sig=' + uniqueUrlCounter;
+    let uniqueUrl = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?sig=' + uniqueUrlCounter;
     $.ajax({
       url: uniqueUrl
     })
@@ -29,7 +28,7 @@ const quoteModule = (function() {
       DOM.$author.html(responce[0].title);
     });
     uniqueUrlCounter++;
-    console.log(uniqueUrl);
+    //console.log(uniqueUrl);
   }
   function showNextQuote() {
     DOM.$showProverbs.removeClass('active');
@@ -45,14 +44,10 @@ const quoteModule = (function() {
   function init() {
     cacheDom();
     bindEvents();
-    //callAjax();
   }
 
   return {
     init: init
   };
-
-
-
 
 })(); //quoteModule

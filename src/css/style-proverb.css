@@ -6,15 +6,16 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: 3;
 }
 #options {
   display: flex;
   justify-content: space-around;
-  width: 80vw;
+  width: 90vw;
   max-width: 900px;
+  margin-top: 10px;
   position: relative;
   z-index: 4;
 }
@@ -31,11 +32,12 @@
 }
 #show-quotes:hover, #show-proverbs:hover,
 #next:hover, #next-quote:hover {
+  color: #cccccc;
   background-color: rgba( 0, 0, 0, .9 );
 }
 #proverb-quote {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   max-width: 900px;
   border: 1px solid gray;
   color: white;
@@ -45,12 +47,14 @@
 }
 #proverb {
   position: relative;
+  max-height: 40vh;
+  overflow: auto;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1em;
   z-index: 4;
 }
 #proverb.largefont {
-  font-size: 2em;
+  font-size: 1.2em;
 }
 #author {
   position: relative;
@@ -67,7 +71,7 @@
   margin-top: 20px;
   padding: 20px;
   cursor: pointer;
-  z-index: 4;
+  z-index: 99;
 }
 #next-quote {
   display: none;
@@ -75,4 +79,15 @@
 div#options div.active {
   color: #cccccc;
   background-color: rgba( 0, 0, 0, .9 );
+}
+@media only screen and (min-height: 600px) {
+  #proverb-container {
+    justify-content: center;
+  }
+  #options {
+    margin-top: 0px;
+  }
+  #proverb.largefont {
+    font-size: 2em;
+  }
 }
