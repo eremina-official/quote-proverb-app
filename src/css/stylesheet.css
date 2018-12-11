@@ -10,22 +10,29 @@ body {
 }
 
 #credits {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   color: white;
   background-color: rgba( 0, 0, 0, .4 );
-  padding: 10px;
-  z-index: 98;
+  padding: 6px;
+  z-index: 4;
 }
 #credits p {
   margin: 0;
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 13px;
+  font-size: 9px;
 }
 #credits a {
   color: white;
 }
-
+@media only screen and (min-height: 600px) {
+  #credits {
+    padding: 10px;
+  }
+  #credits p {
+    font-size: 13px;
+  }
+}
 
