@@ -45,12 +45,13 @@ const proverbModule = (function() {
     backgroundModule.loadNextImage();
   }
   function goToProverb() {
+    DOM.$proverb.html('');
+    DOM.$author.html('');
     DOM.$proverb.addClass('largefont');
     DOM.$showQuotes.removeClass('active');
     $(this).addClass('active');
     DOM.$nextQuote.hide();
     DOM.$nextProverb.show();
-    DOM.$author.html('');
     showProverb();
     backgroundModule.loadNextImage();
   }

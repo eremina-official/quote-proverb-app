@@ -2,7 +2,6 @@ const quoteModule = (function() {
 
   //declare variables
   const DOM = {};
-  let uniqueUrlCounter = 1;
 
   //private functions
   function cacheDom() {
@@ -18,17 +17,21 @@ const quoteModule = (function() {
     DOM.$nextQuote.on('click', showNextQuote);
   }
   function callAjax() {
-    let uniqueUrl = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?sig=' + uniqueUrlCounter;
-    $.ajax({
-      url: uniqueUrl
+      $.ajax({
+      url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      cache: false /* when set to false it forces the requested page not to be cached by the browser */
     })
     .done(function(responce) {
       //console.log(responce);
       DOM.$proverb.html(responce[0].content);
       DOM.$author.html(responce[0].title);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      //console.log(jqXHR);
+      //console.log(textStatus);
+      //console.log(errorThrown);
+      DOM.$proverb.html('Connection error');
     });
-    uniqueUrlCounter++;
-    //console.log(uniqueUrl);
   }
   function showQuotes() {
     DOM.$proverb.html('');
