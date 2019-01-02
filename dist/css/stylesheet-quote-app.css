@@ -1,0 +1,175 @@
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+#image {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  z-index: 2;
+}
+
+#proverb-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+#options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90vw;
+  max-width: 900px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 4;
+}
+#show-quotes, #show-proverbs {
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 6px;
+  color: white;
+  background-color: rgba( 0, 0, 0, .6 );
+  margin-bottom: 20px;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 4;
+}
+#show-quotes:hover, #show-proverbs:hover,
+#next:hover, #next-quote:hover {
+  color: #cccccc;
+  background-color: rgba( 0, 0, 0, .9 );
+}
+#proverb-quote {
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  max-height: 40vh;
+  overflow: auto;
+  border: 1px solid gray;
+  color: white;
+  background-color: rgba( 0, 0, 0, .6 );
+  padding: 10px;
+  z-index: 4;
+}
+#proverb {
+  position: relative;
+  text-align: center;
+  font-size: 1em;
+  z-index: 4;
+}
+#proverb p {
+  margin-top: 0;
+  margin-bottom: 6px;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 6px;
+          margin-block-end: 6px;
+}
+#proverb.largefont {
+  font-size: 1.2em;
+}
+#author {
+  position: relative;
+  text-align: right;
+  margin-left: auto;
+  z-index: 4;
+}
+#next, #next-quote {
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 6px;
+  color: white;
+  background-color: rgba( 0, 0, 0, .6 );
+  margin-top: 20px;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 99;
+}
+#next-quote {
+  display: none;
+}
+div#options div.active {
+  color: #cccccc;
+  background-color: rgba( 0, 0, 0, .9 );
+}
+@media only screen and (min-height: 600px) {
+  #proverb-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #options {
+    margin-top: 0px;
+  }
+  #proverb.largefont {
+    font-size: 2em;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba( 0, 0, 0, .9 );
+}
+
+/* box-sizing property is not inherited */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; 
+}
+
+#credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: white;
+  background-color: rgba( 0, 0, 0, .4 );
+  padding: 6px;
+  z-index: 4;
+}
+#credits p {
+  margin: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  font-size: 9px;
+}
+#credits a {
+  color: white;
+}
+@media only screen and (min-height: 600px) {
+  #credits {
+    padding: 10px;
+  }
+  #credits p {
+    font-size: 13px;
+  }
+}
+
