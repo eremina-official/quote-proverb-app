@@ -45,8 +45,6 @@ function js() {
     .pipe(gulp.dest(pathJS.destJS));
 }
 
-
-
 //export functions as tasks
 exports.css = css;
 exports.js = js;
