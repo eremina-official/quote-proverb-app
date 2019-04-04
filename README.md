@@ -4,4 +4,4 @@ A web application that displays a random quote or a proverb on a random backgrou
 
 The modules are written using revealing module pattern approach. The same project written with ES6 modules is [here](https://github.com/eremina-official/quote-api-es6modules).
 
-**Technologies used**: HTML, CSS, jQuery, Ajax, RWD, Gulp.
+**Technologies**: HTML, CSS, jQuery, Ajax, RWD, Gulp.
